@@ -1,7 +1,7 @@
 use std::io::{self, Read};
 
 use clap::Parser;
-use openov::TimingPointResponse;
+use openov::tp::TimingPointResponse;
 
 #[derive(Parser, Debug)]
 struct Args {
