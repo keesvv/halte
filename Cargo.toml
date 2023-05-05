@@ -1,0 +1,12 @@
+[package]
+name = "halte"
+version = "0.1.0"
+edition = "2021"
+
+[features]
+default = ["cli"]
+cli = ["clap"]
+
+[dependencies]
+clap = { version = "4.2.7", optional = true }
+serde = "1.0.162"
