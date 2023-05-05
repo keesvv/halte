@@ -1,13 +1,13 @@
 use serde::Deserialize;
 
-use crate::Accessibility;
+use crate::{Accessibility, Coord};
 
 #[derive(Deserialize, Debug)]
 pub struct Stop {
     #[serde(rename = "Latitude")]
-    pub lat: f32,
+    pub lat: Coord,
     #[serde(rename = "Longitude")]
-    pub long: f32,
+    pub long: Coord,
     #[serde(rename = "TimingPointTown")]
     pub town: String,
     #[serde(rename = "TimingPointName")]
