@@ -1,7 +1,9 @@
 use std::io::{self, Read};
 
-use clap::Parser;
+use halte::DepartureInfo;
 use openov::tp::TimingPointResponse;
+
+use clap::Parser;
 
 #[derive(Parser, Debug)]
 struct Args {
@@ -23,5 +25,5 @@ fn main() {
     io::stdin().read_to_end(&mut data).unwrap();
 
     let dec = serde_json::from_slice::<TimingPointResponse>(&data).unwrap();
-    println!("{:#?}", dec);
+    println!("{:#?}", DepartureInfo::from(dec));
 }
