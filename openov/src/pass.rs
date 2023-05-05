@@ -20,4 +20,10 @@ pub struct Pass {
     pub lat: Coord,
     #[serde(rename = "Longitude")]
     pub long: Coord,
+    #[serde(rename = "TargetArrivalTime")]
+    pub target_arrival_time: chrono::NaiveDateTime,
+    #[serde(rename = "TargetDepartureTime")]
+    pub target_departure_time: chrono::NaiveDateTime,
+    #[serde(rename = "ExpectedArrivalTime")]
+    pub expected_arrival_time: chrono::NaiveDateTime,
 }
