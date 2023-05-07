@@ -14,6 +14,8 @@ pub struct Pass {
     pub operator_code: String,
     #[serde(rename = "FortifyOrderNumber")]
     pub fortify_order_no: u64,
+    #[serde(rename = "LinePublicNumber")]
+    pub line_public_no: String,
     #[serde(rename = "TransportType")]
     pub transport_type: TransportType,
     #[serde(rename = "Latitude")]

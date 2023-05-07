@@ -1,6 +1,6 @@
 use std::io::{self, Read};
 
-use halte::DepartureInfo;
+use halte::Stop;
 use openov::tp::TimingPointResponse;
 
 use clap::Parser;
@@ -25,5 +25,5 @@ fn main() {
     io::stdin().read_to_end(&mut data).unwrap();
 
     let dec = serde_json::from_slice::<TimingPointResponse>(&data).unwrap();
-    println!("{:#?}", DepartureInfo::from(dec));
+    println!("{:#?}", Stop::from(dec));
 }
