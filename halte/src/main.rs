@@ -1,9 +1,12 @@
 use std::io::{self, Read};
 
+use chrono_humanize::HumanTime;
 use halte::Stop;
 use openov::tp::TimingPointResponse;
 
 use clap::{Parser, ValueEnum};
+use colored::Colorize;
+use tabular::{row, Row, Table};
 
 #[derive(ValueEnum, Debug, Clone, Copy)]
 enum Source {
@@ -48,6 +51,24 @@ impl TryFrom<Args> for TimingPointResponse {
 fn main() {
     let args = Args::parse();
     let response = TimingPointResponse::try_from(args).unwrap();
+    let stop = Stop::from(response);
 
-    println!("{:#?}", Stop::from(response));
+    println!("Departures for {}", stop.name.bold());
+
+    let mut table = Table::new("{:<}\t{:<}\t{:<}\t{:>}");
+    table.add_row(row!("When", "To", "With", "Line"));
+
+    for departure in stop.departures {
+        let diff = departure.timing.arrival_expected - chrono::Local::now().naive_local();
+        let time = HumanTime::from(diff);
+        table.add_row(
+            Row::new()
+                .with_cell(time)
+                .with_cell(departure.line.destination)
+                .with_cell(departure.line.transport)
+                .with_cell(departure.line.name),
+        );
+    }
+
+    print!("{}", table);
 }
