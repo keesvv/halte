@@ -9,9 +9,17 @@ import SwiftUI
 
 @main
 struct HalteApp: App {
+    var departure: Date = Date().advanced(by: (60 * 5) + 1)
+    var canonicalDeparture: String {
+        return RelativeDateTimeFormatter().localizedString(
+            fromTimeInterval: departure.timeIntervalSinceNow)
+    }
+
     var body: some Scene {
-        WindowGroup {
-            ContentView()
+        MenuBarExtra("Halte", systemImage: "tram.fill") {
+            VStack {
+                Text("Next departure in \(canonicalDeparture)")
+            }
         }
     }
 }

@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		93146B292A093E0F00964F9E /* HalteApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93146B282A093E0F00964F9E /* HalteApp.swift */; };
-		93146B2B2A093E0F00964F9E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93146B2A2A093E0F00964F9E /* ContentView.swift */; };
 		93146B2D2A093E1000964F9E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93146B2C2A093E1000964F9E /* Assets.xcassets */; };
 		93146B302A093E1000964F9E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93146B2F2A093E1000964F9E /* Preview Assets.xcassets */; };
 		93146B3B2A093E1000964F9E /* HalteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93146B3A2A093E1000964F9E /* HalteTests.swift */; };
@@ -36,7 +35,6 @@
 /* Begin PBXFileReference section */
 		93146B252A093E0F00964F9E /* Halte.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Halte.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93146B282A093E0F00964F9E /* HalteApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalteApp.swift; sourceTree = "<group>"; };
-		93146B2A2A093E0F00964F9E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		93146B2C2A093E1000964F9E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		93146B2F2A093E1000964F9E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		93146B312A093E1000964F9E /* Halte.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Halte.entitlements; sourceTree = "<group>"; };
@@ -45,6 +43,7 @@
 		93146B402A093E1000964F9E /* HalteUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HalteUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		93146B442A093E1000964F9E /* HalteUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalteUITests.swift; sourceTree = "<group>"; };
 		93146B462A093E1000964F9E /* HalteUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalteUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		93843A502A09434600178AB3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,8 +94,8 @@
 		93146B272A093E0F00964F9E /* Halte */ = {
 			isa = PBXGroup;
 			children = (
+				93843A502A09434600178AB3 /* Info.plist */,
 				93146B282A093E0F00964F9E /* HalteApp.swift */,
-				93146B2A2A093E0F00964F9E /* ContentView.swift */,
 				93146B2C2A093E1000964F9E /* Assets.xcassets */,
 				93146B312A093E1000964F9E /* Halte.entitlements */,
 				93146B2E2A093E1000964F9E /* Preview Content */,
@@ -259,7 +258,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				93146B2B2A093E0F00964F9E /* ContentView.swift in Sources */,
 				93146B292A093E0F00964F9E /* HalteApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -424,6 +422,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Halte/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -451,6 +450,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Halte/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
