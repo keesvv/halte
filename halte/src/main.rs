@@ -58,7 +58,11 @@ fn main() {
     let mut table = Table::new("{:<}\t{:<}\t{:<}\t{:>}");
     table.add_row(row!("When", "To", "With", "Line"));
 
-    for departure in stop.departures {
+    for departure in {
+        let mut dep_sorted = stop.departures.to_vec();
+        dep_sorted.sort();
+        dep_sorted
+    } {
         let diff = departure.timing.arrival_expected - chrono::Local::now().naive_local();
         let time = HumanTime::from(diff);
         table.add_row(

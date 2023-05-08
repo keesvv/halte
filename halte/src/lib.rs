@@ -1,4 +1,4 @@
-use std::fmt::Debug;
+use std::{cmp::Ordering, fmt::Debug};
 
 use openov::{
     pass::Pass,
@@ -6,7 +6,7 @@ use openov::{
     TransportType,
 };
 
-#[derive(Debug)]
+#[derive(Debug, PartialEq, Eq, Clone, Copy)]
 pub struct Timing {
     pub arrival: chrono::NaiveDateTime,
     pub arrival_expected: chrono::NaiveDateTime,
@@ -23,7 +23,7 @@ impl From<&Pass> for Timing {
     }
 }
 
-#[derive(Debug)]
+#[derive(Debug, PartialEq, Eq, Clone)]
 pub struct Line {
     pub destination: String,
     pub transport: TransportType,
@@ -40,11 +40,27 @@ impl From<&Pass> for Line {
     }
 }
 
-#[derive(Debug)]
+#[derive(Debug, PartialEq, Eq, Clone)]
 pub struct Departure {
     pub id: String,
     pub line: Line,
     pub timing: Timing,
+}
+
+impl PartialOrd for Departure {
+    fn partial_cmp(&self, other: &Self) -> Option<Ordering> {
+        self.timing
+            .arrival_expected
+            .partial_cmp(&other.timing.arrival_expected)
+    }
+}
+
+impl Ord for Departure {
+    fn cmp(&self, other: &Self) -> Ordering {
+        self.timing
+            .arrival_expected
+            .cmp(&other.timing.arrival_expected)
+    }
 }
 
 impl From<(&String, &Pass)> for Departure {
